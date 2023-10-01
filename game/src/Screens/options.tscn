@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/User Interfase/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/User Interfase/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/User Interfase/Quit Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://start-assets/background.png" type="Texture" id=4]
+[ext_resource path="res://start-assets/ui_theme.tres" type="Theme" id=5]
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.882
+anchor_bottom = 1.825
+margin_right = -0.168091
+theme = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 519.5, 311.5 )
+scale = Vector2( 0.533854, 0.549074 )
+texture = ExtResource( 4 )
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+margin_left = -662.5
+margin_top = -508.5
+margin_right = -290.5
+margin_bottom = -443.5
+text = "---OPTIONS---"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 138.0
+margin_right = 964.0
+margin_bottom = 373.0
+text = "1. You can play the Game using arrow keys and (W,A,S,D)   
+2.If you hit the enemy horizontally you will die.                     
+3.If you hit the enemy vertically enemy will die.                    
+4.You have to collect the coins, your score will increase by 100.     
+5.If you kill the enemy you will get 100 to your score.          
+               
+"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 0.014
+anchor_right = 0.53
+anchor_bottom = 0.525
+margin_left = 387.0
+margin_top = 367.67
+margin_right = -366.31
+margin_bottom = -94.875
+
+[node name="Play Button" parent="Menu" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 267.0
+margin_bottom = 46.0
+next_scene_path = "res://src/Levels/Level00.tscn"
+
+[node name="Quit Button2" parent="Menu" instance=ExtResource( 3 )]
+margin_top = 50.0
+margin_right = 267.0
+margin_bottom = 97.0
